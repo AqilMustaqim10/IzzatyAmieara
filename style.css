@@ -1,0 +1,329 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --color-bg: linear-gradient(to top, #d987cd, #00d4ff);
+    --line-color: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    --leaf-color: linear-gradient(to bottom, #ffe785, #faf573, #1a233a 99%);
+    --fall-leaf-color: linear-gradient(to bottom, #ffe785, #faf573, #e2d64f 99%);
+  }
+  
+  body{
+    font-family: 'Arial', sans-serif;
+    background-image: url('bg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .inactive{
+    display: none;
+  }
+  
+  .opacidad_1{
+    opacity: 1;
+  }
+  
+  .opacidad{
+    opacity: 0.2;
+  }
+  
+  .grass{
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+  }
+  
+  .grass img{
+    object-fit: contain;
+    width: 100%;
+  }
+  
+  .flower{
+    position: relative;
+    left: 0%;
+  }
+  
+  .flower_two{
+    position: relative;
+    left: 4%;
+  }
+  
+  .flower_three{
+    position: relative;
+    left: 8%;
+  }
+  
+  .flower_four{
+    position: relative;
+    left: 12%;
+  }
+  
+  .flower_five{
+    position: relative;
+    left: 16%;
+  }
+  
+  .flower_six{
+    position: relative;
+    left: -4%;
+  }
+  
+  .flower_seven{
+    position: relative;
+    left: -8%;
+  }
+  
+  .flower_eight{
+    position: relative;
+    left: -12%;
+  }
+  
+  .flower_nine{
+    position: relative;
+    left: -16%;
+  }
+  
+  .flower_ten{
+    position: relative;
+    left: -20%;
+  }
+  
+  .flower_eleven{
+    position: relative;
+    left: 20%;
+  }
+  
+  
+  .flower-wrapper{
+    position: absolute;
+    left: 45%;
+    bottom: 2vmin;
+  }
+  
+  .flower_line{
+    width: 2vmin;
+    height: 36vmin;
+    background-image: var(--line-color);
+    border-radius: 4vmin;
+  }
+  
+  .flower_line2{
+    width: 2vmin;
+    height: 56vmin;
+    background-image: var(--line-color);
+    border-radius: 4vmin;
+  }
+  
+  .flower-center{
+    position: absolute;
+    top: 1vmin;
+    left: 50%;
+    transform: translateX(-50%) rotate(-10deg);
+    width: 2vmin;
+    height: 2vmin;
+  }
+  
+  .flower_leaf{
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    transform: translateX(-50%);
+    width: 5vmin;
+    height: 14vmin;
+    background-image: var(--leaf-color);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    animation: open-flower 2s 1s backwards;
+  }
+  
+  .flower_leaft-1{
+    width: 10vmin;
+    height: 12vmin;
+    bottom: 3vmin;
+    border-radius: 50% 50% 50% / 80% 80% 20% 20%;
+    background-color: #e2d64f;
+    background-image: none;
+    animation: open-flower-middle 1.4s 1s backwards;
+  }
+  
+  .flower_leaft-2{
+    transform: translateX(-50%) rotate(-30deg);
+  }
+  
+  .flower_leaft-3{
+    transform: translateX(-50%) rotate(-50deg);
+  }
+  
+  .flower_leaft-4{
+    transform: translateX(-50%) rotate(-70deg);
+  }
+  
+  .flower_leaft-5{
+    transform: translateX(-50%) rotate(30deg);
+  }
+  
+  .flower_leaft-6{
+    transform: translateX(-50%) rotate(50deg);
+  }
+  
+  .flower_leaft-7{
+    transform: translateX(-50%) rotate(70deg);
+  }
+  
+  .flower-leaft-8{
+    width: 13vmin;
+    height: 11vmin;
+    bottom: 6vmin;
+    border-radius: none;
+    clip-path: none;
+    left: -50%;
+    border-radius: 10vmin 2vmin 10vmin 2vmin;
+    background-image: var(--fall-leaf-color);
+    transform: rotate(-55deg);
+  }
+  
+  header {
+    display: flex;
+    position: fixed;
+    font-size: 50px;
+    top: 200px;
+  }
+  
+  header .heart{
+    height: 150px;
+    width: 150px;
+    background-color: red;
+    position: relative;
+    transform: rotate(45deg);
+    box-shadow: -20px 20px 150px #f20044;
+    animation: palpitar 0.4s linear infinite alternate;
+    cursor: pointer;
+  }
+  
+  header .heart::before{
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background: red;
+    right: 50%;
+    border-radius: 50%;
+    box-shadow: 20px 20px 150px #f20044;
+  }
+  
+  header .heart::after{
+    content: "";
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    background: red;
+    top: -50%;
+    border-radius: 50%;
+    box-shadow: 20px 20px 150px #f20044;
+  }
+  
+  .message{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .show{
+    pointer-events: auto;
+    opacity: 1;
+  }
+  
+  .modal-message{
+    display: flex;
+    background-color: papayawhip;
+    width: 300px;
+    height: 400px;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .modal-message p{
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+  }
+  
+  .modal-message p:nth-child(1){
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -60px;
+    color: rgb(194, 0, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .modal-message p:nth-child(2){
+    margin-top: 30px;
+  }
+  
+  .btn_close{
+    display: flex;
+    width: 80px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    border: 2px solid gainsboro;
+    box-shadow: 2px 2px 8px black;
+    background: #104e1c;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .btn_close:hover{
+    background-color: #0c2916;
+  }
+  
+  @keyframes open-flower{
+    0%{
+      transform: translateX(-50%) rotate(0);
+    }
+  }
+  
+  @keyframes open-flower-middle {
+    0%{
+      opacity: 0;
+      transform: translateX(-50%) scale(0);
+    }
+  }
+  
+  @keyframes palpitar{
+    0%{
+      transform: rotate(45deg) scale(1.10);
+    }
+    80%{
+      transform: rotate(45deg) scale(1.0);
+    }
+    100%{
+      transform: rotate(45deg) scale(0.8);
+    }
+  }
+  

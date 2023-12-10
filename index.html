@@ -1,0 +1,138 @@
+<!-- Page 1: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-color: #ffd1dc; /* Pastel Pink */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .container.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        textarea[readonly] {
+            border: none;
+            overflow: hidden;
+            outline: none;
+            resize: none;
+            background-color: transparent;
+            font-family: 'Arial', sans-serif;
+            font-size: 1em;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #ffd1dc;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            position: relative;
+            margin-bottom: 10px; /* Added space below the button */
+        }
+
+        button:hover {
+            background-color: #ffd1dc;
+        }
+
+        .envelope {
+            max-width: 500px; /* 50% bigger than the original size */
+            max-height: 500px; /* 50% bigger than the original size */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        audio {
+            margin-top: 20px;
+            width: 100%;
+            display: none; /* hide default audio controls */
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffd1dc;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Added space above the link */
+        }
+
+        a:hover {
+            background-color: #ffd1dc;
+        }
+    </style>
+</head>
+<body>  
+    <div class="container" id="letterContainer">
+        <p>Hi Sayang </p>
+        <p>I'm trying my best to give you the assurance you want. I want to spend the rest of my life with you and only you. 
+            I will always be here for you, I'm here to support you on everything. Thank you for everything, thank you for 
+            choosing me.</p>
+    </div>
+    <img class="envelope" src="envelope.png" alt="Envelope" />
+    <button onclick="toggleContainer()">Open</button>
+    <audio autoplay id="audioPlayer">
+        <source src="song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <a href="page2.html">Your virtual flower here</a>
+
+    <script>
+        function toggleContainer() {
+            var container = document.getElementById("letterContainer");
+            container.classList.toggle("show");
+            var envelopeImage = document.querySelector(".envelope");
+            envelopeImage.style.display = "none";
+            var openButton = document.querySelector("button");
+            openButton.style.display = "none";
+        }
+    </script>
+</body>
+</html>
